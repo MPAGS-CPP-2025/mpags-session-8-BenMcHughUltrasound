@@ -4,11 +4,17 @@
 #include <string>
 #include <vector>
 struct ProgramSettings{
+    /// Is help requested
     bool helpRequested{false};
+    /// Is version requested
     bool versionRequested{false};
+    /// Input file name
     std::string inputFile;
+    /// Output file name
     std::string outputFile;
+    /// cipher key as unsigned long
     std::string cipherkey;
+    /// encrypt/decrypt
     bool encrypt{true};
 };
 
@@ -22,12 +28,12 @@ struct ProgramSettings{
  * \brief Processes the command-line arguments and modifies accordingly the program settings
  *
  * \param cmdLineArgs The command-line arguments to be processed
- * \param helpRequested Indicates the presence of the help flag in the arguments
- * \param versionRequested Indicates the presence of the version flag in the arguments
- * \param inputFile Name of the input file
- * \param outputFile Name of the output file
- * \param cipherKey Key to be used in encrypting/decrypting routine
- * \param encrypt Flag indicating the mode in which the cipher should run (encrypt = true, decrypt = false)
+ * \param ProgramSettings The program settings, containing options to 
+ * display help,
+ * display version,
+ * pass input/output files
+ * specify a cipher key
+ * specify encyption/decryption
  * \return true if the arguments could be successfully parsed, false otherwise
  */
 bool processCommandLine(const std::vector<std::string>& cmdLineArgs,
