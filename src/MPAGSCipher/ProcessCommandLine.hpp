@@ -3,6 +3,15 @@
 
 #include <string>
 #include <vector>
+struct ProgramSettings{
+    bool helpRequested{false};
+    bool versionRequested{false};
+    std::string inputFile;
+    std::string outputFile;
+    std::string cipherkey;
+    bool encrypt{true};
+};
+
 
 /**
  * \file ProcessCommandLine.hpp
@@ -22,8 +31,6 @@
  * \return true if the arguments could be successfully parsed, false otherwise
  */
 bool processCommandLine(const std::vector<std::string>& cmdLineArgs,
-                        bool& helpRequested, bool& versionRequested,
-                        std::string& inputFile, std::string& outputFile,
-                        std::string& cipherKey, bool& encrypt);
+                        ProgramSettings&);
 
 #endif    // MPAGSCIPHER_PROCESSCOMMANDLINE_HPP
